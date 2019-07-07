@@ -1,4 +1,0 @@
-{
-   "mongoURI": "mongodb+srv://admin:adminBaseProject@base-pc916.mongodb.net/test?retryWrites=true",
-   "jwtToken": "mysecretToken007"
-}

@@ -6,13 +6,18 @@
   "scripts": {
     "start": "node server",
     "server": "nodemon server",
-    "lint": "eslint ./"
+    "lint": "eslint ./",
+    "client": "npm start --prefix client",
+    "client-install": "npm install --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Jorge de La Fuente",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "config": "^3.1.0",
+    "dotenv": "^8.0.0",
     "express": "^4.16.4",
     "express-validator": "^5.3.1",
     "gravatar": "^1.8.0",

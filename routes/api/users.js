@@ -1,10 +1,11 @@
+require("dotenv").config();
 const express = require("express");
 const router = express.Router();
 const { check, validationResult } = require("express-validator/check")
 const gravatar = require("gravatar")
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
-const config = require("config")
+// const config = require("config")
 
 const User = require("./../../models/User")
 
@@ -47,7 +48,7 @@ router.post("/", [
       }
 
       // JWT Token set to Expire in 3600 Seconds
-      jwt.sign(payload, config.get("jwtToken"),
+      jwt.sign(payload, process.env.jwtToken,
          {
             expiresIn: 36000
          }, (err, token) => {
